@@ -9,16 +9,21 @@ const todoSlices =  createSlice({
     initialState:initialState,
     reducers: {
         addTodo: (state,action)=>{
-            const eachTodo = {
-                id:nanoid(),
-                title: action.payload.title,
-                isCompleted:false
-            }
-            state.todo.push(eachTodo);
+          try {
+              const eachTodo = {
+                  id:nanoid(),
+                  title: action.payload.title,
+                  isCompleted:false
+              }
+              console.log(eachTodo);
+  
+              state.todo.push(eachTodo);
+          } catch (error) {
+              console.log(error);
+          }
         },
         deleteTodo: (state,action)=>{
             state.todo = state.todo.filter((eachTodo)=> eachTodo.id !== action.payload.id);
-          
         }
     }
 });

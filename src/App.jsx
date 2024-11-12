@@ -1,11 +1,12 @@
 import React from "react"
 
+import TodoForm from "./components/Todo-Form-Component"
 
 function App() {
 
   return (
    <>
-   <h1 className="text-white">Redux Tool Kit</h1>
+   <TodoForm/>
 
    </>
   )
